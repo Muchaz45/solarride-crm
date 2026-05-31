@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Dashboard</title>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">     
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+         
+        <link rel = "stylesheet" href = "sheets/inventory.css"> 
+    </head>
+<body>
+    <div class = "dashboard-page">
+        <div class = "sidebar">
+            <div class = "company-details">
+                <img class = "company-logo" src = "images/solarride_logo.svg">
+            </div>
+            <div class = "menu-items">
+
+                <div class="menu-item" onclick = "window.location = 'dashboard.html'">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span class = "menu-item-name">Dashboard</span>
+                </div>
+                <div class="menu-item active">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class = "menu-item-name">Inventory</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span class = "menu-item-name">Customers</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span class = "menu-item-name">Payments</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span class = "menu-item-name">Devices</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span class = "menu-item-name">Field Agents</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span class = "menu-item-name">Service Tickets</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class = "menu-item-name">Reports & Analytics</span>
+                </div>
+
+        
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class = "menu-item-name">Settings</span>
+                </div>
+
+            </div>
+
+            <div class = "admin-section">
+                <div class = "admin-profile-picture">
+                    <img class = "admin-photo" src = "images/profile picture.jpg">
+                </div>
+                <div class = "admin-contacts">
+                    <p class = "admin-name">Admin User</p>
+                    <p class = "admin-email">solaride@admin.com</p>
+                </div>
+            </div>
+        </div>
+        <div class = "display-page">
+            <div class = "display-header">
+                <div class = "display-header-left-section">
+                    <h3 class = "dashboard-heading">Inventory</h3>
+                </div>
+                <div class = "display-header-middle-section search">
+                    <input type = "search" class = "search-bar" placeholder = "search customer name, id, devices etc">
+                    <button class = "search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class = "display-header-right-section">
+                    <div class = "add-customer-container">
+                    <button class = "add-product-btn" onclick = "productForm()">+ Add New Product</button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class = "main-highlights">
+                <div class = "main-highlight-container">
+                    <div class="main-highlight-symbol-container" id = "inv-value-symbol">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </div>
+
+                    <div class = "main-highlight-text-container">
+                        <p class = "item-highlight">Inventory Value</p>
+                        <h3 class = "key-highlight" id = "inventory-value">96,000</h3>
+                    </div>
+                </div>              
+                <div class = "main-highlight-container">
+                    <div class="main-highlight-symbol-container" id = "inv-total-symbol">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+                    <div class = "main-highlight-text-container">
+                        <p class = "item-highlight">Total Items</p>
+                        <h3 class = "key-highlight" id = "inventory-total">96,000</h3>
+                    </div>
+                </div>
+                <div class = "main-highlight-container">
+                    <div class="main-highlight-symbol-container" id = "inv-dispatch-symbol">
+                        <i class="fa-solid fa-truck-arrow-right"></i>
+                    </div>
+                    <div class = "main-highlight-text-container">
+                        <p class = "item-highlight">Dispatched (Month)</p>
+                        <h3 class = "key-highlight">5</h3>
+                    </div> 
+                </div>
+                <div class = "main-highlight-container">
+                    <div class="main-highlight-symbol-container" id = "inv-received-symbol">
+                      <i class="fa-solid fa-download"></i>  
+                    </div>
+                    <div class = "main-highlight-text-container">
+                        <p class = "item-highlight">Received (Month)</p>
+                        <h3 class = "key-highlight">4</h3>
+                    </div>
+                </div>
+            </div>
+            <div class = "stock-charts">
+                <div class = "stock-category-chart">
+                    <div class = "stock-chart-container">
+                        <h4 class = "stock-chart-heading">Stock by Category</h4>
+                        <canvas id = "stock-category-chart"></canvas>
+                    </div> 
+                    <div class = "stock-category-chart-legend">
+
+                    </div>
+                </div>
+                
+                <div class = "low-stock-chart">
+                    <h4 class = "stock-chart-heading">Low Stock Alert</h4>
+                    <div class = "low-stock-container"></div>
+                </div>
+            </div>
+
+            <div class = "add-product-form">
+                <div class = "input-container">
+                    <label for = "sku">SKU</label>
+                    <input type = "text" id = "sku" class = "sku" placeholder = "SKU 001">
+                </div>
+
+                <div class = "input-container">
+                    <label for = "product-name">Name</label>
+                    <input type = "text" id = "product-name" class = "product-name" placeholder = "SHS 200W Solar Kit">
+                </div>
+
+                <div class = "input-container">
+                    <label for = "category">Category</label>
+                    <select id = "add-category" class = "add-category">
+                        <option value = "">Select a Category</option>
+                    </select>
+                </div>
+
+                <div class = "input-container">
+                    <label for = "product-quantity">Quantity</label>
+                    <input type = "number" id = "product-quantity" class = "product-quantity" placeholder = "20">
+                </div>
+
+                <div class = "input-container">
+                    <label for = "product-maximum">Maximum Quantity</label>
+                    <input type = "number" id = "product-maximum" class = "product-maximum" placeholder = "20">
+                </div>
+
+                <div class = "input-container">
+                    <label for = "product-price">Price</label>
+                    <input type = "number" id = "product-price" class = "product-price" placeholder = "$ 499">
+                </div>
+
+                <div class = "add-product-form-btns">
+                    <button class = "add-item-btn" onclick = "addProduct()">Add product</button>
+                    <button class = "cancel-btn" onclick = "cancelForm()">Cancel</button>
+                </div>
+
+            </div>
+            <div class = "products-list-table-container">
+                <div class = "inventory-table-top-section">
+                    <div class = "products-table-heading">
+                        <h4>Product Inventory</h4>
+                    </div>
+                    <div class = "products-table-filter">
+                        <select  id = "product-category" class = "products-filter" onchange = "filterItem()">
+                            <option value = "">Select Category</option>
+                        </select>
+                        <select id = "product-list-name" class = "products-filter" onchange = "filterItem()">
+                            <option value = "">Select Product</option>
+                        </select>
+                        <select id = "product-status" class = "products-filter">
+                            <option value = "">Status</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class = "products-list-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Maximum</th>
+                            <th>Price</th>
+                            <th>Stock %</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody class = "table-rows"></tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <button onclick="prevPage()">Prev</button>
+                <span id="page-info"></span>
+                <button onclick="nextPage()">Next</button>
+            </div>
+
+            </div>
+            
+            
+            </div>
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src = "scripts/inventory.js"></script>
+</body>
+</html>

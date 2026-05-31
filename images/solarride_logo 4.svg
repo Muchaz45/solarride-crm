@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 90" width="620" height="90">
+  <g transform="translate(0, 5) scale(0.89)">
+    <rect x="22" y="4"  width="16" height="16" rx="1" fill="white" transform="rotate(45 30 12)"/>
+    <rect x="42" y="4"  width="16" height="16" rx="1" fill="white" transform="rotate(45 50 12)"/>
+    <rect x="12" y="24" width="16" height="16" rx="1" fill="rgb(134,218,14)" transform="rotate(45 20 32)"/>
+    <rect x="32" y="24" width="16" height="16" rx="1" fill="white" transform="rotate(45 40 32)"/>
+    <rect x="52" y="24" width="16" height="16" rx="1" fill="white" transform="rotate(45 60 32)"/>
+    <rect x="22" y="44" width="16" height="16" rx="1" fill="white" transform="rotate(45 30 52)"/>
+    <rect x="42" y="44" width="16" height="16" rx="1" fill="white" transform="rotate(45 50 52)"/>
+    <rect x="32" y="64" width="16" height="16" rx="1" fill="rgb(134,218,14)" transform="rotate(45 40 72)"/>
+  </g>
+  <text font-family="'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="72" letter-spacing="-2">
+    <tspan x="95" y="68" fill="#FFFFFF">Solar</tspan><tspan fill="rgb(134,218,14)">Ride</tspan>
+  </text>
+</svg>

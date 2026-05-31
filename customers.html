@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Dashboard</title>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">     
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+         
+        <link rel = "stylesheet" href = "sheets/customers.css"> 
+    </head>
+<body>
+    <div class = "dashboard-page">
+        <div class = "sidebar">
+            <div class = "company-details">
+                <img class = "company-logo" src = "images/main logo.png">
+                <p class = "company-name">SolarRide</p>
+            </div>
+            <div class = "menu-items">
+
+                <div class="menu-item active" onclick = "window.location = 'dashboard.html'">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span class = "menu-item-name">Dashboard</span>
+                </div>
+
+                <div class="menu-item" onclick = "window.location = 'customers.html'">
+                    <i class="fa-solid fa-users"></i>
+                    <span class = "menu-item-name">Customers</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span class = "menu-item-name">Payments</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span class = "menu-item-name">Devices</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span class = "menu-item-name">Field Agents</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span class = "menu-item-name">Service Tickets</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class = "menu-item-name">Reports & Analytics</span>
+                </div>
+
+                <div class="menu-item" onclick = "window.location = 'inventory.html'">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class = "menu-item-name">Inventory</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class = "menu-item-name">Settings</span>
+                </div>
+
+            </div>
+
+            <div class = "admin-section">
+                <div class = "admin-profile-picture">
+                    <img class = "admin-photo" src = "images/profile picture.jpg">
+                </div>
+                <div class = "admin-contacts">
+                    <p class = "admin-name">Admin User</p>
+                    <p class = "admin-email">solaride@admin.com</p>
+                </div>
+            </div>
+        </div>
+        <div class = "display-page">
+            <div class = "display-header">
+                <div class = "display-header-left-section">
+                    <h3 class = "dashboard-heading">Customers</h3>
+                </div>
+                <div class = "display-header-middle-section search">
+                    <input type = "search" class = "search-bar" placeholder = "search customer name, id, devices etc">
+                    <button class = "search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class = "display-header-right-section">
+                    <div class = "add-customer-container">
+                    <button class = "add-customer-btn">+ Add Customer</button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class = "main-highlights">
+                <div class = "main-highlight-container">
+                    <p class = "item-highlight">Total Customers</p>
+                    <h3 class = "key-highlight">120,000</h3>
+                </div>
+
+                <div class = "main-highlight-container">
+                    <p class = "item-highlight">Active Customers</p>
+                    <h3 class = "key-highlight">96,000</h3>
+                </div>
+
+                <div class = "main-highlight-container">
+                    <p class = "item-highlight">Compeleted</p>
+                    <h3 class = "key-highlight">20,000</h3>
+                </div>
+
+                <div class = "main-highlight-container">
+                    <p class = "item-highlight">Defaulted</p>
+                    <h3 class = "key-highlight">4,000</h3>
+                </div>
+
+            </div>
+            <div class = "customer-filters-container">
+                <div class = "customer-filters">
+                    <button class = "customer-filter">All</button>
+                    <button class = "customer-filter">Active</button>
+                    <button class = "customer-filter">Completed</button>
+                    <button class = "customer-filter">Defaulted</button>
+
+                </div>
+                
+
+            </div>
+
+            <div class = "customers-list-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Location</th>
+                            <th>Product</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody class = "table-rows"></tbody>
+                </table>
+
+                
+                
+            </div>
+            
+            </div>
+        </div>
+<script src = "scripts/customers.js"></script>
+</body>
+</html>

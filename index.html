@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Dashboard</title>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" href = "sheets/dashboard.css">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    </head>
+<body>
+    <div class = "dashboard-page">
+        <div class = "sidebar">
+            <div class = "company-details">
+                <img class = "company-logo" src = "images/solarride_logo.svg">
+            </div>
+            <div class = "menu-items">
+
+                <div class="menu-item active">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span class = "menu-item-name">Dashboard</span>
+                </div>
+                <div class="menu-item" onclick = "window.location = 'inventory.html'">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class = "menu-item-name">Inventory</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span class = "menu-item-name">Customers</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span class = "menu-item-name">Payments</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span class = "menu-item-name">Devices</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span class = "menu-item-name">Field Agents</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span class = "menu-item-name">Service Tickets</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class = "menu-item-name">Reports & Analytics</span>
+                </div>
+
+    
+
+                <div class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class = "menu-item-name">Settings</span>
+                </div>
+
+            </div>
+
+            <div class = "admin-section">
+                <div class = "admin-profile-picture">
+                    <img class = "admin-photo" src = "images/profile picture.jpg">
+                </div>
+                <div class = "admin-contacts">
+                    <p class = "admin-name">Admin User</p>
+                    <p class = "admin-email">solaride@admin.com</p>
+                </div>
+            </div>
+        </div>
+        <div class = "display-page">
+            <div class = "display-header">
+                <div class = "display-header-left-section">
+                    <h3 class = "dashboard-heading">Dashboard</h3>
+                </div>
+                <div class = "display-header-middle-section search">
+                    <input type = "search" class = "search-bar" placeholder = "search customer name, id, devices etc">
+                    <button class = "search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class = "display-header-right-section">
+                    <img class = "notification-icon" src = "images/notification-icon.svg">
+                    <img class = "profile-photo" src = "images/profile picture.jpg">
+                </div>
+            </div>
+            <div class = "main-highlights">
+                <div class = "main-highlight-container">
+                    <div class="main-highlight-symbol-container" id = "total-customer-symbol">
+                      <i class="fa-solid fa-users"></i>  
+                    </div>
+                    <div class = "main-highlight-text-container">
+                        <p class = "item-highlight">Total Customers</p>
+                        <h3 class = "key-highlight">120,000</h3>
+                        <p class = "comment">+12% vs last year</p>
+                    </div>
+                </div> 
+                <div class = "main-highlight-container">
+                    <div class="main-highlight-symbol-container" id = "active-customer-symbol">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div class = "main-highlight-text-container">
+                        <p class = "item-highlight">Active Customers</p>
+                        <h3 class = "key-highlight">96,000</h3>
+                        <p class = "comment">80% of total</p>
+                    </div>
+                </div>              
+                <div class = "main-highlight-container">
+                    <div class="main-highlight-symbol-container" id = "total-revenue-symbol">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </div>
+                    <div class = "main-highlight-text-container">
+                        <p class = "item-highlight">Total Revenue </p>
+                        <h3 class = "key-highlight">KES 7,200,000</h3>
+                        <p class = "comment">+10 vs last month</p>
+                    </div>
+                </div>
+                <div class = "main-highlight-container">
+                    <div class="main-highlight-symbol-container" id ="default-rate-symbol">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class = "main-highlight-text-container">
+                        <p class = "item-highlight">Default Rate</p>
+                        <h3 class = "key-highlight">6.7%</h3>
+                        <p class = "comment">- 2% vs last month</p>
+                    </div> 
+                </div>
+                <div class = "main-highlight-container">
+                    <div class="main-highlight-symbol-container" id = "locked-device-symbol">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div class = "main-highlight-text-container">
+                        <p class = "item-highlight">Locked Devices</p>
+                        <h3 class = "key-highlight">1,200</h3>
+                        <p class = "locked comment"> 10% ↓ in devices</p>
+                    </div>
+                </div>
+             </div>
+            <div class = "company-charts">
+                <div class = "company-chart">
+                    <h4 class = "company-chart-heading">Revenue Overview</h4>
+                    <div class = "revenue-canvas">
+                        <canvas id = "revenueChart" width="400px" height = "150px"></canvas>
+                    </div>
+                </div>
+                <div class = "company-chart">
+                    <h4 class = "company-chart-heading">Top Agents</h4>
+                    <div class = "top-agents-container"></div>
+                </div>
+            </div>
+            <div class = "customer-charts">
+                <div class= "customer-chart customer-status-chart">
+                    
+                    <div class = "customer-canvas">
+                        <h4 class = "customer-chart-heading">Customer Status</h4>
+                        <canvas id = "customerChart"></canvas>
+                    </div>
+                    <div class = "customer-chart-legend">
+
+                    </div>
+                </div>
+                <div class = "customer-chart">
+                    <h4 class = "customer-chart-heading">Recent Payments</h4>
+                    <div class = "recent-payments-container">
+
+                    </div>
+
+                </div>
+                <div class = "customer-chart alerts-container">
+                    <h4 class = "customer-chart-heading">Recent Alerts</h4>
+                    <div class = "payment-alerts-container"></div>
+                    <div class = "customer-alerts-container"></div>
+                    <div class = "stock-alerts-container"></div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src = "scripts/inventory.js" defer></script>
+<script src = "scripts/dashboard.js" defer></script>
+</body>
+</html>

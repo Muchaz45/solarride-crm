@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 90" width="580" height="90">
+  <circle cx="45" cy="45" r="42" fill="none" stroke="rgb(134,218,14)" stroke-width="5" stroke-dasharray="30 17" stroke-dashoffset="0" stroke-linecap="round"/>
+  <circle cx="45" cy="45" r="34" fill="none" stroke="rgb(134,218,14)" stroke-width="5" stroke-dasharray="27 16" stroke-dashoffset="8" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="45" cy="45" r="26" fill="none" stroke="#F59E0B" stroke-width="5" stroke-dasharray="22 19" stroke-dashoffset="4" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="45" cy="45" r="18" fill="none" stroke="#F59E0B" stroke-width="5" stroke-dasharray="18 20" stroke-dashoffset="12" stroke-linecap="round"/>
+  <circle cx="45" cy="45" r="5" fill="#F59E0B"/>
+  <text font-family="'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="72" letter-spacing="-2">
+    <tspan x="105" y="68" fill="#FFFFFF">Solar</tspan><tspan fill="rgb(134,218,14)">Ride</tspan>
+  </text>
+</svg>
